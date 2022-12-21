@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-blog",
+  "name": "cuongtn-blog",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,5 +19,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.1"
   }
 }
