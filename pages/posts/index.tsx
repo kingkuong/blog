@@ -8,7 +8,7 @@ const PostsPage = ({ posts }) => {
       <ul>
         {posts.map((post) => {
           return (
-            <li>
+            <li key={post.slug}>
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </li>
           );
