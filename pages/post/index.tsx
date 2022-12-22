@@ -7,7 +7,7 @@ const PostPage = ({ posts }) => {
           <>
             <strong>{post.slug}</strong>
             <h1>{post.title}</h1>
-            <p>{post.content}</p>
+            <div>{post.content}</div>
           </>
         );
       })}
@@ -18,6 +18,7 @@ const PostPage = ({ posts }) => {
 export async function getStaticProps() {
   const posts = await sanityClient.fetch('*[_type == "post"]');
 
+  console.log(posts);
   return {
     props: {
       posts,
