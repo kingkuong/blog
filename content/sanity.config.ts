@@ -6,8 +6,8 @@ import {schemaTypes} from './schemas'
 export default defineConfig({
   name: 'blog-content',
   title: 'Blog Content',
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: 'ooc3m5ke',
+  dataset: 'production',
   plugins: [deskTool(), visionTool()],
   schema: {
     types: schemaTypes,
