@@ -1,15 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import { createClient } from "next-sanity";
-
-export const sanityClient = createClient({
-  //projectId: process.env.SANITY_PROJECT_ID,
-  projectId: "ooc3m5ke",
-  dataset: "production",
-  apiVersion: "2022-12-21",
-  useCdn: false,
-});
 
 export default function Home() {
   return (

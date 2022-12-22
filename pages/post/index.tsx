@@ -1,4 +1,4 @@
-import { sanityClient } from "../";
+import { sanityClient } from "../../lib/sanity";
 const PostPage = ({ posts }) => {
   return (
     <div>
@@ -7,7 +7,6 @@ const PostPage = ({ posts }) => {
           <>
             <strong>{post.slug}</strong>
             <h1>{post.title}</h1>
-            <div>{post.content}</div>
           </>
         );
       })}
@@ -18,7 +17,6 @@ const PostPage = ({ posts }) => {
 export async function getStaticProps() {
   const posts = await sanityClient.fetch('*[_type == "post"]');
 
-  console.log(posts);
   return {
     props: {
       posts,
