@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { sanityClient } from "../../lib/sanity";
 import { PortableText } from "@portabletext/react";
+import { Post } from "../../models";
 
-const PostsPage = ({ posts }) => {
+const PostsPage = ({ posts }: { posts: Post[] }) => {
   return (
     <div>
       <ul>
