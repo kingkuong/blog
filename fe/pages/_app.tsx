@@ -1,11 +1,28 @@
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 
-export default function App({ Component, pageProps }: AppProps) {
+import theme from "../theme";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+
+import { CacheProvider, EmotionCache } from "@emotion/react";
+
+import createEmotionCache from "../utilities/createEmotionCache";
+
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
+
+export default function App(props: MyAppProps) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
-    <>
-      <Component {...pageProps} />
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
       <Analytics mode={"production"} />
-    </>
+    </CacheProvider>
   );
 }
