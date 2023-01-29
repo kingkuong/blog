@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import Link from "next/link";
 import { sanityClient } from "../../lib/sanity";
-import { PortableText } from "@portabletext/react";
 import { Post } from "../../models";
 import { Template } from "../../components";
 
@@ -8,7 +8,7 @@ const PostsPage = ({ posts }: { posts: Post[] }) => {
   return (
     <Template>
       <ul>
-        {posts.map((post) => {
+        {posts?.map((post) => {
           return (
             <li key={post.slug}>
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
