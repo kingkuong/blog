@@ -1,12 +1,11 @@
-import Head from "next/head";
-import Link from "next/link";
-import { Navbar } from "../components";
-export default function Home() {
+import { Template } from "../components";
+
+const Home = () => {
   return (
-    <>
-      <main>
-        <Navbar />
-      </main>
-    </>
+    <Template>
+      <h1>Home Page</h1>
+    </Template>
   );
-}
+};
+
+export default Home;

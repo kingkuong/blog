@@ -2,10 +2,11 @@ import Link from "next/link";
 import { sanityClient } from "../../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import { Post } from "../../models";
+import { Template } from "../../components";
 
 const PostsPage = ({ posts }: { posts: Post[] }) => {
   return (
-    <div>
+    <Template>
       <ul>
         {posts.map((post) => {
           return (
@@ -15,7 +16,7 @@ const PostsPage = ({ posts }: { posts: Post[] }) => {
           );
         })}
       </ul>
-    </div>
+    </Template>
   );
 };
 

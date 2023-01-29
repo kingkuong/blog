@@ -17,12 +17,14 @@ const clientSideEmotionCache = createEmotionCache();
 export default function App(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+    <>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </CacheProvider>
       <Analytics mode={"production"} />
-    </CacheProvider>
+    </>
   );
 }

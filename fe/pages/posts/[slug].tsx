@@ -1,16 +1,19 @@
 import { sanityClient } from "../../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import { Post } from "../../models";
+import { Template } from "../../components";
 
 const PostPage = ({ post }: { post: Post }) => {
   if (!post) {
     return <>Nothing</>;
   }
   return (
-    <article>
-      <h1>{post.title}</h1>
-      <PortableText value={post.content} />
-    </article>
+    <Template>
+      <article>
+        <h1>{post.title}</h1>
+        <PortableText value={post.content} />
+      </article>
+    </Template>
   );
 };
 

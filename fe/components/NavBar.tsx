@@ -15,6 +15,10 @@ import Typography from "@mui/material/Typography";
 export const Navbar = () => {
   const pages = [
     {
+      title: "Home",
+      href: "/",
+    },
+    {
       title: "Posts",
       href: "/posts",
     },
